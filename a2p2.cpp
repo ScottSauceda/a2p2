@@ -149,8 +149,9 @@ endI5://             }
                      {
                         ++iter;
                         count = 0;
-                        if (iter == 1)
-                        {
+                        // if (iter == 1)
+                        if (iter != 1)goto else6;
+begI6://                {
                            for (hopPtr1 = a1, endPtr1 = a1 + used1;  // multi-init
                                                  hopPtr1 < endPtr1;  // test
                                                           ++hopPtr1) // update
@@ -175,9 +176,10 @@ endI5://             }
                               *hopPtr1 = -99;
                               ++used1;
                            }
-                        }
-                        else
-                        {
+                        goto endI6;
+                     // }
+else6://             else
+                     // {
                            if (iter == 2)
                            {
                               for (hopPtr2 = a2, endPtr2 = a2 + used2;  // multi-init
@@ -232,7 +234,8 @@ endI5://             }
                                  ++used3;
                               }
                            }
-                        }
+endI6://                }
+;
                      }
                      while (iter < 3);
 endI3://          }
