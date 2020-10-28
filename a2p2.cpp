@@ -186,8 +186,9 @@ endI9://                   }
                      // }
 else6://             else
                      // {
-                           if (iter == 2)
-                           {
+                           // if (iter == 2)
+                           if (iter != 2)goto else10;
+begI10://                  {
                               for (hopPtr2 = a2, endPtr2 = a2 + used2;  // multi-init
                                                     hopPtr2 < endPtr2;  // test
                                                              ++hopPtr2) // update
@@ -212,9 +213,10 @@ else6://             else
                                  *hopPtr2 = -99;
                                  ++used2;
                               }
-                           }
-                           else
-                           {
+                             goto endI10;
+                        // }
+else10://                  else
+                        // {
                               for (hopPtr3 = a3, endPtr3 = a3 + used3;  // multi-init
                                                     hopPtr3 < endPtr3;  // test
                                                              ++hopPtr3) // update
@@ -239,7 +241,8 @@ else6://             else
                                  *hopPtr3 = -99;
                                  ++used3;
                               }
-                           }
+endI10://                  }
+;
 endI6://                }
 ;
                      }
