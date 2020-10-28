@@ -157,17 +157,20 @@ begI6://                {
                                                           ++hopPtr1) // update
                            {
                               target = *hopPtr1;
-                              if (target != 5)
-                              {
+                              //if (target != 5)
+                              if (target == 5)goto else7;
+begI7://                      {
                                  ++count;
-                              }
-                              else
-                              {
+                              goto endI7;
+                           // }
+else7://                     else
+                           // {
                                  if (count != 0)
                                  {
                                     *(hopPtr1 - count) = *hopPtr1;
                                  }
-                              }
+endI7://                      }
+;
                            }
                            used1 -= count;
                            if (used1 == 0)
