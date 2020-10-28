@@ -95,7 +95,7 @@ begI3://          {
                      {
                         target = *hopPtr1;
                         // if (target < 0 || target > 9)
-                        if(target >= 0)goto begI4;
+                        if(target < 0)goto begI4;
                         if(target <= 9)goto endI4; 
 begI4://                {
                            for (hopPtr11 = hopPtr1 + 1;  // multi-init
