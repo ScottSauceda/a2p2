@@ -194,17 +194,20 @@ begI10://                  {
                                                              ++hopPtr2) // update
                               {
                                  target = *hopPtr2;
-                                 if (target > 4)
-                                 {
+                                 // if (target > 4)
+                                 if (target <= 4)goto else11;
+begI11://                        {
                                     ++count;
-                                 }
-                                 else
-                                 {
+                                 goto endI11;
+                              // }
+else11://                        else
+                              // {
                                     if (count != 0)
                                     {
                                        *(hopPtr2 - count) = *hopPtr2;
                                     }
-                                 }
+endI11://                        }
+;
                               }
                               used2 -= count;
                               if (used2 == 0)
