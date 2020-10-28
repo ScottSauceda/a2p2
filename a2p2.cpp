@@ -202,10 +202,12 @@ begI11://                        {
                               // }
 else11://                        else
                               // {
-                                    if (count != 0)
-                                    {
+                                    // if (count != 0)
+                                    if (count == 0)goto endI12;
+begI12://                           {
                                        *(hopPtr2 - count) = *hopPtr2;
-                                    }
+endI12://                           }
+;
 endI11://                        }
 ;
                               }
