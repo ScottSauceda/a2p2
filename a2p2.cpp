@@ -212,12 +212,14 @@ endI11://                        }
 ;
                               }
                               used2 -= count;
-                              if (used2 == 0)
-                              {
+                              // if (used2 == 0)
+                              if (used2 != 0)goto endI13;
+begI13://                     {
                                  hopPtr2 = a2;
                                  *hopPtr2 = -99;
                                  ++used2;
-                              }
+endI13://                     }
+;
                              goto endI10;
                         // }
 else10://                  else
