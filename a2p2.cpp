@@ -175,12 +175,13 @@ endI7://                      }
 ;
                            }
                            used1 -= count;
-                           if (used1 == 0)
-                           {
+                           // if (used1 == 0)
+                           if (used1 != 0)goto endI9;
+begI9://                   {
                               hopPtr1 = a1;
                               *hopPtr1 = -99;
                               ++used1;
-                           }
+endI9://                   }
                         goto endI6;
                      // }
 else6://             else
