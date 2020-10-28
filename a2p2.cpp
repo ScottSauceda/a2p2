@@ -94,8 +94,10 @@ begI3://          {
                                                     ++hopPtr1) // update
                      {
                         target = *hopPtr1;
-                        if (target < 0 || target > 9)
-                        {
+                        // if (target < 0 || target > 9)
+                        if(target >= 0)goto begI4;
+                        if(target <= 9)goto endI4; 
+begI4://                {
                            for (hopPtr11 = hopPtr1 + 1;  // multi-init
                                     hopPtr11 < endPtr1;  // test
                                              ++hopPtr11) // update
@@ -105,7 +107,8 @@ begI3://          {
                            --used1;
                            --endPtr1;
                            --hopPtr1;
-                        }
+endI4://                }
+;
                      }
 
                      cout << nn09A1Str;
