@@ -165,10 +165,12 @@ begI7://                      {
                            // }
 else7://                     else
                            // {
-                                 if (count != 0)
-                                 {
+                                 // if (count != 0)
+                                 if (count == 0)goto endI8;
+begI8://                         {
                                     *(hopPtr1 - count) = *hopPtr1;
-                                 }
+endI8://                         }
+;
 endI7://                      }
 ;
                            }
