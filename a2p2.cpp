@@ -36,33 +36,45 @@ int main()
                    *endPtr3;
 
                reply = 'y';
-               while (reply != 'n' && reply != 'N')
-               {
+               goto WTest1;
+               // while (reply != 'n' && reply != 'N')
+begW1://       {
                   used1 = 0;
                   hopPtr1 = a1;
-                  while (reply != 'n' && reply != 'N')
-                  {
+                  goto WTest2;
+                  // while (reply != 'n' && reply != 'N')
+begW2://          {
                      cout << einStr;
                      cout << (used1 + 1);
                      cout << ':' << ' ';
                      cin >> *hopPtr1;
                      ++used1;
                      ++hopPtr1;
-                     if (used1 < 12)
-                     {
+                     // if (used1 < 12)
+                     if(used1 >= 12) goto else1;
+begI1://             {
                         cout << emiStr;
                         cin >> reply;
-                     }
-                     else
-                     {
+                        goto endI1;
+                     //  }
+else1://             else
+                     // {
                         cout << moStr << 12 << ieStr << endl;
                         reply = 'n';
-                     }
-                  }
+                     // }
+endI1://
+;
+endW2://           }
+WTest2:     //(reply != 'n' && reply != 'N')
+            //if(reply != 'n' && reply != 'N') goto begW1;
+            if(reply == 'n') goto xitW2;
+            if(reply != 'N') goto begW2;
+xitW2:    
 
                   cout << begA1Str;
-                  if (used1 > 0)
-                  {
+                  // if (used1 > 0)
+                  if(used1 <= 0)goto endI2;
+begI2://          {
                      hopPtr1 = a1;
                      endPtr1 = a1 + used1;
                      do
@@ -71,11 +83,12 @@ int main()
                         ++hopPtr1;
                      }
                      while (hopPtr1 < endPtr1);
-                  }
+endI2://          }
                   cout << endl;
 
-                  if (used1 > 0)
-                  {
+                  // if (used1 > 0)
+                  if (used1 <= 0)goto endI3;
+begI3://          {
                      for (hopPtr1 = a1, endPtr1 = a1 + used1;  // multi-init
                                            hopPtr1 < endPtr1;  // test
                                                     ++hopPtr1) // update
@@ -218,7 +231,7 @@ int main()
                         }
                      }
                      while (iter < 3);
-                  }
+endI3://          }
 
                   cout << procA1Str;
                   if (used1 > 0)
@@ -264,8 +277,12 @@ int main()
 
                   cout << dacStr;
                   cin >> reply;
-               }
-
+endW1://       }
+WTest1:     //(reply != 'n' && reply != 'N')
+            //if(reply != 'n' && reply != 'N') goto begW1;
+            if(reply == 'n') goto xitW1;
+            if(reply != 'N') goto begW1;
+xitW1:     
                cout << dlStr << '\n';
                cout << byeStr << '\n';
                cout << dlStr << '\n';
