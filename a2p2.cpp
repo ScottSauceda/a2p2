@@ -295,7 +295,7 @@ endI18://         }
 
                   cout << procA3Str;
                   // if (used3 > 0)
-                  if (used3 > 0)goto endI19;
+                  if (used3 <= 0)goto endI19;
 begI19://         {
                      hopPtr3 = a3;
                      endPtr3 = a3 + used3;
