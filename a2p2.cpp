@@ -112,8 +112,9 @@ endI4://                }
                      }
 
                      cout << nn09A1Str;
-                     if (used1 > 0)
-                     {
+                     // if (used1 > 0)
+                     if(used1 <= 0)goto endI5;
+begI5://             {
                         hopPtr1 = a1;
                         endPtr1 = a1 + used1;
                         do
@@ -122,7 +123,7 @@ endI4://                }
                            ++hopPtr1;
                         }
                         while (hopPtr1 < endPtr1);
-                     }
+endI5://             }
                      cout << endl;
 
                      used2 = 0;
