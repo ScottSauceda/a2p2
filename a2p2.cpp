@@ -264,8 +264,9 @@ endI6://                }
 endI3://          }
 
                   cout << procA1Str;
-                  if (used1 > 0)
-                  {
+                  // if (used1 > 0)
+                  if (used1 <= 0)goto endI17;
+begI17://         {
                      hopPtr1 = a1;
                      endPtr1 = a1 + used1;
                      do
@@ -274,12 +275,13 @@ endI3://          }
                         ++hopPtr1;
                      }
                      while (hopPtr1 < endPtr1);
-                  }
+endI17://         }
                   cout << endl;
 
                   cout << procA2Str;
-                  if (used2 > 0)
-                  {
+                  // if (used2 > 0)
+                  if (used2 <= 0)goto endI18;
+begI18://         {
                      hopPtr2 = a2;
                      endPtr2 = a2 + used2;
                      do
@@ -288,12 +290,13 @@ endI3://          }
                         ++hopPtr2;
                      }
                      while (hopPtr2 < endPtr2);
-                  }
+endI18://         }
                   cout << endl;
 
                   cout << procA3Str;
-                  if (used3 > 0)
-                  {
+                  // if (used3 > 0)
+                  if (used3 > 0)goto endI19;
+begI19://         {
                      hopPtr3 = a3;
                      endPtr3 = a3 + used3;
                      do
@@ -302,7 +305,7 @@ endI3://          }
                         ++hopPtr3;
                      }
                      while (hopPtr3 < endPtr3);
-                  }
+endI19://         }
                   cout << endl;
 
                   cout << dacStr;
