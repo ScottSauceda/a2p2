@@ -229,25 +229,32 @@ else10://                  else
                                                              ++hopPtr3) // update
                               {
                                  target = *hopPtr3;
-                                 if (target < 6)
-                                 {
+                                 // if (target < 6)
+                                 if (target >= 6)goto elseI14;
+begI14://                        {
                                     ++count;
-                                 }
-                                 else
-                                 {
-                                    if (count != 0)
-                                    {
+                                    goto endI14;
+                              // }
+elseI14://                       else
+                              // {
+                                    // if (count != 0)
+                                    if (count == 0)goto endI15;
+begI15://                           {
                                        *(hopPtr3 - count) = *hopPtr3;
-                                    }
-                                 }
+endI15://                           }
+;
+endI14://                        }
+;
                               }
                               used3 -= count;
-                              if (used3 == 0)
-                              {
+                              // if (used3 == 0)
+                              if (used3 != 0)goto endI16;
+begI16://                     {
                                  hopPtr3 = a3;
                                  *hopPtr3 = -99;
                                  ++used3;
-                              }
+endI16://                     }
+;
 endI10://                  }
 ;
 endI6://                }
